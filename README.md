@@ -1,6 +1,15 @@
 # Restaurante
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+# Para ejecutar el codigo 
+
+para ejecutar el codigo se necesita tener instalado: angular v16.1.1 / nodjs v18.16.1 y un IDE para poder ejecutarlo
+npm install -g @angular/cli 
+npm install browser-image-compression
+ng serve (para su ejecucion)
+# Informacion acutal del codigo
+Al no tener tipos de usuario creado cualquier pueda acceder al menu administrador principal donde se puede editar la 
+informacion del restaurante. mas adelante se busca cambiar esto.
 
 ## Development server
 
