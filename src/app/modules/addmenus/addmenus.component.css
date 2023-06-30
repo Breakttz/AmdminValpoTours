@@ -1,0 +1,40 @@
+.menu-form {
+  max-width: 400px;
+  padding: 60px;
+  margin:  auto;
+}
+
+.menu-form .form-group {
+  margin-bottom: 16px;
+}
+
+.menu-form label {
+  font-weight: bold;
+}
+
+.menu-form input[type="text"],
+.menu-form input[type="number"],
+.menu-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.menu-form textarea {
+  resize: vertical;
+}
+
+.menu-form button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #972b1d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-form button[type="submit"]:hover {
+  background-color: #aa4922;
+}
+

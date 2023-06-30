@@ -1,0 +1,39 @@
+
+<body>
+  <div class="content">
+    <h1>Santa Rosa De Lima</h1>
+
+      <p-galleria [value]="images" (onValueChange)="handleValueChange($event)" [showIndicators]="true" [showThumbnails]="false"
+        [changeItemOnIndicatorHover]="false" [responsiveOptions]="responsiveOptions"
+        [containerStyle]="{ 'max-width': '640px' }">
+        <ng-template pTemplate="item" let-item>
+          <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+        </ng-template>
+      </p-galleria>
+    
+    
+
+    <div class="card-container">
+      <div class="card">
+        <a href="add-component">
+          <span class="material-icons"></span>
+          <p>Agregar Menú</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="editmenu-component">
+          <span class="material-icons"></span>
+          <p>Modificar Menú</p>
+        </a>
+      </div>
+      <!-- Agregar más tarjetas aquí -->
+    </div>
+
+    <div class="card highlight-card">
+      <a href="mostrarmenu-component">
+        <span class="material-icons"></span>
+        <p>Menús</p>
+      </a>
+    </div>
+  </div>
+</body>
