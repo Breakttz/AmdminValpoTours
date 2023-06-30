@@ -1,11 +1,18 @@
-
+<style>
+  body {
+      background-image: url('assets/imagenes/walpaper.jpg');
+      background-size: cover;
+      background-position: center;
+      /* Otros estilos opcionales */
+  }
+</style>
 <body>
   <div class="content">
     <h1>Santa Rosa De Lima</h1>
 
       <p-galleria [value]="images" (onValueChange)="handleValueChange($event)" [showIndicators]="true" [showThumbnails]="false"
         [changeItemOnIndicatorHover]="false" [responsiveOptions]="responsiveOptions"
-        [containerStyle]="{ 'max-width': '640px' }">
+        [containerStyle]="{ 'max-width': '740px' }">
         <ng-template pTemplate="item" let-item>
           <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
         </ng-template>

@@ -1,7 +1,13 @@
 .menu-form {
   max-width: 400px;
   padding: 60px;
-  margin:  auto;
+  margin: auto;
+  box-sizing: border-box; /* Añadido para incluir el padding en el ancho total */
+
+  /* Agregado para evitar que el formulario afecte la posición del footer */
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
 }
 
 .menu-form .form-group {

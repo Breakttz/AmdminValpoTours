@@ -6,7 +6,7 @@ import { EditmenusComponent } from './modules/editmenus/editmenus.component';
 import { MostrarMenusComponent } from './modules/mostrar-menus/mostrar-menus.component';
 const routes: Routes = [
   { path: 'add-component', component: AddmenusComponent },
-  { path: '', component: MenuPrincipalComponent },
+  { path: 'menu-inicio-component', component: MenuPrincipalComponent },
   { path: 'mostrarmenu-component', component: MostrarMenusComponent },
   { path: 'editmenu-component', component: EditmenusComponent },
 

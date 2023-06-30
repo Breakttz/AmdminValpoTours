@@ -1,10 +1,25 @@
 <header class="toolbar">
-    <img src="assets/imagenes/logo.jpg" alt="Logo Restaurante">
-    <span class="spacer"></span>
-    <img id="twitter-logo" src="assets/imagenes/iglogo.png" alt="Logo Twitter">
-    <img id="youtube-logo" src="assets/imagenes/wpslogo.png" alt="Logo YouTube">
-  </header>
-  
-  <div class="cointer-main">
-    <router-outlet></router-outlet>
-  </div>
+  <img src="assets/imagenes/logo.jpg" alt="Logo Restaurante">
+  <a href="menu-inicio-component"><button id="inicio-button">Inicio</button></a>
+  <a href="mostrarmenu-component"><button id="menus-button">Menús</button></a>
+  <span class="spacer"></span>
+  <p id="id-contacto">Contactos :</p>
+  <a href="https://www.instagram.com/restaurantesantarosadelima/"><img id="ig-logo" src="assets/imagenes/iglogo.png" alt="Logo ig"></a>
+  <a href="https://api.whatsapp.com/send?phone=%2B56935101291&text=Hola+bienvenidos+mandamos+un+mensaje+con+tu+orden+y+te+atenderemos+enseguida+"><img id="wsp-logo" src="assets/imagenes/wpslogo.png" alt="Logo wsp"></a>
+
+</header>
+
+
+<div class="cointer-main">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footbar">
+  <p id="texto1">Todos los derechos reservados uwuwuw</p>
+  <p id="direcciontext"> Direccion : Av No existe 2320, Vitacura, Santiago</p>
+  <span class="spacer"></span>
+  <p id="id-contacto">Contactos :</p>
+  <a href="https://www.instagram.com/restaurantesantarosadelima/"><img id="ig-logo" src="assets/imagenes/iglogo.png" alt="Logo ig"></a>
+  <a href="https://api.whatsapp.com/send?phone=%2B56935101291&text=Hola+bienvenidos+mandamos+un+mensaje+con+tu+orden+y+te+atenderemos+enseguida+"><img id="wsp-logo" src="assets/imagenes/wpslogo.png" alt="Logo wsp"></a>
+
+</footer>

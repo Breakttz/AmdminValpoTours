@@ -9,9 +9,9 @@ interface Image {
 })
 export class MenuPrincipalComponent {
   images: Image[] = [
-    { itemImageSrc: 'assets/comidas/logo.jpg' },
-    { itemImageSrc: 'assets/comidas/ceviche.png' },
-    { itemImageSrc: 'assets/comidas/logo.jpg' }  
+    { itemImageSrc: 'assets/imagenes/portada.jpg' },
+    { itemImageSrc: 'assets/imagenes/portada1.jpg' },
+    { itemImageSrc: 'assets/imagenes/portada3.jpg' }  
   ];
 
 
