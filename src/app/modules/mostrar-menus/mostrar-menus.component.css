@@ -8,14 +8,18 @@
   }
   
   .headeroption {
-    color: white;
+    color: rgb(184, 11, 11);
     font-weight: bold;
     text-decoration: none;
   }
-  
+
   .headeroption:last-child {
     margin-left: auto;
   }
+  .custom-card {
+    /* Otros estilos para la tarjeta */
+  }
+  
   
   .header__option.active {
     color: #ff0000;
@@ -66,7 +70,17 @@
     font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-lines: 200;
   }
+  .custom-card .description {
+    flex-grow: 1; /* El texto de descripción ocupa todo el espacio disponible */
+    padding: 15px; /* Espaciado interno del contenido */
+    font-size: 14px; /* Tamaño de fuente */
+    overflow: hidden; /* Oculta el texto que desborda */
+    text-overflow: ellipsis; /* Añade puntos suspensivos (...) al final del texto cortado */
+    white-space: nowrap; /* Evita que el texto se ajuste automáticamente a múltiples líneas */
+  }
+  
   
   /* Color de fondo del cuerpo */
   section {

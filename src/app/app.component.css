@@ -10,13 +10,13 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #972b1d;
+    background-color: #2861ac;
   }
   .toolbar button {
     font-family: Arial, sans-serif;
     font-size: 14px;
-    color: #ffffff;
-    background-color: #972b1d;
+    color: #000000;
+    background-color: #ffffff;
     border: none;
     padding: 10px 20px;
     border-radius: 30px;
@@ -26,7 +26,8 @@
   }
 
   .toolbar button:hover {
-    background-color: #843c32;
+    background-color: #081b6d;
+    color: wheat;
   }
   
   .toolbar #inicio-button {
@@ -81,7 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #972b1d;
+    background-color: #286e96;
   }
   
   .footbar #texto1 {

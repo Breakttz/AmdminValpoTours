@@ -1,43 +1,23 @@
-
-
 <div class="container-custom">
   <section>
     <h2>Menús Principales</h2>
     <div class="container mt-4 mb-5">
       <div class="row">
         <div class="col-md-6 col-lg-4 my-4" *ngFor="let menu of menus">
-          <p-card [header]="menu.nombre" [subheader]="(menu.precio | currency:'USD') + ''" class="custom-card">
+          <p-card [header]="menu.nombre" class="custom-card">
             <ng-template pTemplate="header">
-              <img alt="Card" [src]="menu.imagen" class="menus-image img-fluid">
+              <img alt="Card" [src]="menu.urlimg" class="menus-image img-fluid">
             </ng-template>
             <ng-template pTemplate="content">
               <div class="description">{{ menu.descripcion }}</div>
             </ng-template>
             <ng-template pTemplate="footer">
-              <p-button label="Comprar" ></p-button>
-              <p-button label="Detalles"  styleClass="p-button-secondary ml-2"></p-button>
-            </ng-template>
-          </p-card>
-        </div>
-      </div>
-    </div>
-
-  </section>
-  <section>
-    <h2>Menús para Compartir</h2>
-    <div class="container mt-4 mb-5">
-      <div class="row">
-        <div class="col-md-6 col-lg-4 my-4" *ngFor="let menu of menus">
-          <p-card [header]="menu.nombre" [subheader]="(menu.precio | currency:'USD') + ''" class="custom-card">
-            <ng-template pTemplate="header">
-              <img alt="Card" [src]="menu.imagen" class="menus-image img-fluid">
-            </ng-template>
-            <ng-template pTemplate="content">
-              <div class="description">{{ menu.descripcion }}</div>
-            </ng-template>
-            <ng-template pTemplate="footer">
-              <p-button label="Comprar" icon="pi pi-check"></p-button>
-              <p-button label="Detalles" icon="pi pi-times" styleClass="p-button-secondary ml-2"></p-button>
+              <div class="card">
+                <a href="editmenu-component">
+                  <span class="material-icons"></span>
+                  <p>Modificar</p>
+                </a>
+              </div>            
             </ng-template>
           </p-card>
         </div>

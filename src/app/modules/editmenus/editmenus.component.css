@@ -1,0 +1,54 @@
+/* Ajustes generales */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px; /* Máximo ancho del contenedor */
+    margin: 0 auto; /* Centrado horizontalmente */
+    padding: 20px;
+  }
+  
+  /* Estilos para la tabla */
+  .p-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .p-table th,
+  .p-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .p-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .p-table td:last-child {
+    text-align: center;
+  }
+  
+  /* Estilos para los botones */
+  .p-button {
+    margin-right: 5px;
+  }
+  
+  .p-button-rounded {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+  }
+  
+  /* Estilos para la edición de celdas */
+  .p-cellEditor .p-cell-editor-input,
+  .p-cellEditor .p-cell-editor-output {
+    display: block;
+  }
+  

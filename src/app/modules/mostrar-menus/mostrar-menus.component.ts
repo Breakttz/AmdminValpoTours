@@ -3,10 +3,17 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage'; // Import AngularFireStorage
 
 interface NuevoMenu {
-  nombre: string;
-  precio: number;
-  descripcion: string;
-  imagen: string; // Change the type from HTMLImageElement to string
+  id: string,
+  nombre: string,
+  categoria: string,
+  descripcion:string,
+  direccion: string,
+  urlmaps: string,
+  atitud: string,
+  localidad: string,
+  longitud: string,
+  provincia: string,
+  urlimg: string
 }
 
 @Component({
@@ -28,7 +35,7 @@ export class MostrarMenusComponent implements OnInit {
   }
 
   fetchMenus() {
-    this.firestore.collection<NuevoMenu>('menus').valueChanges().subscribe((menus) => {
+    this.firestore.collection<NuevoMenu>('places').valueChanges().subscribe((menus) => {
       this.menus = menus;
       this.menusCompartir = menus.slice();
       console.log('Menús recuperados:', this.menus);
@@ -44,7 +51,7 @@ export class MostrarMenusComponent implements OnInit {
 
       reader.onload = () => {
         const dataURL = reader.result as string;
-        menu.imagen = dataURL;
+        menu.urlimg = dataURL;
       };
     }
   }

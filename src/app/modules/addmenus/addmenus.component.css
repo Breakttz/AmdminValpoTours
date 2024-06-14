@@ -1,46 +1,67 @@
-.menu-form {
-  max-width: 400px;
-  padding: 60px;
-  margin: auto;
-  box-sizing: border-box; /* Añadido para incluir el padding en el ancho total */
-
-  /* Agregado para evitar que el formulario afecte la posición del footer */
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 60px);
+/* Estilos generales */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
 }
 
+.menu-form {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  background-color: #c1eff0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Añade esta línea */
+  margin: auto; /* Añade esta línea */
+}
+
+
 .menu-form .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .menu-form label {
+  font-size: 18px;
   font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .menu-form input[type="text"],
-.menu-form input[type="number"],
 .menu-form textarea {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 16px;
 }
 
-.menu-form textarea {
-  resize: vertical;
+.menu-form input[type="text"]:focus,
+.menu-form textarea:focus {
+  outline: none;
+  border-color: #50C2C9;
+  box-shadow: 0 0 8px rgba(80, 194, 201, 0.5);
 }
 
-.menu-form button[type="submit"] {
-  padding: 8px 16px;
-  background-color: #972b1d;
+.menu-form .submit-button {
+  background-color: #628f8f;
   color: white;
   border: none;
+  padding: 14px 20px;
+  font-size: 18px;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.menu-form button[type="submit"]:hover {
-  background-color: #aa4922;
+.menu-form .submit-button:hover {
+  background-color: #50C2C9;
 }
 
+@media (max-width: 768px) {
+  .menu-form {
+    padding: 30px;
+  }
+}

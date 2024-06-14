@@ -1,0 +1,7 @@
+<ul class="list-group list-group-item-info">
+  <li class="list-group-item list-group-item-info text-center" *ngFor="let comentary of comentario; let i = index" [ngClass]="{'active': i === 0}">
+    {{ comentary.nombreUsuario }}
+    {{ comentary.comentario }}
+    <button pButton pRipple type="button" icon="pi pi-trash" (click)="eliminarComentario(comentary)" class="p-button-rounded p-button-text p-button-danger"></button>
+  </li>
+</ul>

@@ -1,24 +1,50 @@
-<form (ngSubmit)="agregarMenu()" [formGroup]="formulario" class="menu-form">
-  <div class="form-group">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" formControlName="nombre" required>
-  </div>
+<div class="container">
+  <form (ngSubmit)="agregarMenu()" [formGroup]="formulario" class="menu-form">
+    <div class="form-group">
+      <label for="nombre">Nombre Del lugar:</label>
+      <input type="text" id="nombre" formControlName="nombre" required>
+    </div>
 
-  <div class="form-group">
-    <label for="precio">Precio:</label>
-    <input type="number" id="precio" formControlName="precio" required>
-  </div>
+    <div class="form-group">
+      <label for="categoria">Categoría:</label>
+      <input type="text" id="categoria" formControlName="categoria" required>
+    </div>
 
-  <div class="form-group">
-    <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" formControlName="descripcion" required></textarea>
-  </div>
+    <div class="form-group">
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" formControlName="direccion" required>
+    </div>
 
-  <div class="form-group">
-    <label for="imagen">Imagen:</label>
-    <input type="file" id="imagen" (change)="onFileSelected($event)" accept="image/*" required>
-    <img [src]="formulario.get('imagen')?.value" alt="Imagen seleccionada" *ngIf="formulario.get('imagen')?.value">
-  </div>
+    <div class="form-group">
+      <label for="urlmaps">URL Maps:</label>
+      <input type="text" id="urlmaps" formControlName="urlmaps" required>
+    </div>
 
-  <button type="submit" class="submit-button">Agregar Menú</button>
-</form>
+    <div class="form-group">
+      <label for="atitud">Actitud:</label>
+      <input type="text" id="atitud" formControlName="atitud" required>
+    </div>
+
+    <div class="form-group">
+      <label for="localidad">Localidad:</label>
+      <input type="text" id="localidad" formControlName="localidad" required>
+    </div>
+
+    <div class="form-group">
+      <label for="longitud">Longitud:</label>
+      <input type="text" id="longitud" formControlName="longitud" required>
+    </div>
+
+    <div class="form-group">
+      <label for="provincia">Provincia:</label>
+      <input type="text" id="provincia" formControlName="provincia" required>
+    </div>
+
+    <div class="form-group">
+      <label for="urlimg">URL de la Imagen:</label>
+      <input type="text" id="urlimg" formControlName="urlimg" required>
+    </div>
+
+    <button type="submit" class="submit-button">Agregar Lugar</button>
+  </form>
+</div>

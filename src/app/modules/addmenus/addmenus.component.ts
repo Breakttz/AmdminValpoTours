@@ -6,10 +6,17 @@ import imageCompression from 'browser-image-compression';
 
 
 interface NuevoMenu {
+  id: string,
   nombre: string,
-  precio: string,
+  categoria: string,
+  direccion: string,
   descripcion: string,
-  image:File
+  urlmaps: string,
+  latitud: string,
+  localidad: string,
+  longitud: string,
+  provincia: string,
+  urlimg: string
 }
 
 @Component({
@@ -29,9 +36,15 @@ export class AddmenusComponent {
   {
     this.formulario = this.formBuilder.group({
       nombre: ['', Validators.required],
-      precio: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      imagen: ['', Validators.required] // Agregamos el campo imagen al formulario
+      categoria: ['', Validators.required],
+      direccion: ['', Validators.required],
+      urlmaps: ['', Validators.required],
+      atitud: ['', Validators.required],
+      localidad: ['', Validators.required],
+      longitud: ['', Validators.required],
+      provincia: ['', Validators.required],
+      urlimg: ['', Validators.required],
+      descripcion: ['', Validators.required] // Añadimos la descripción aquí
 
     });
   }
@@ -68,7 +81,7 @@ export class AddmenusComponent {
       try {
         // Agregar el menú a Firestore utilizando AngularFirestore
         const id = this.firestore.createId();
-        await this.firestore.collection('menus').doc(id).set({...nuevoMenu,id});
+        await this.firestore.collection('places').doc(id).set({...nuevoMenu,id});
         console.log('Menú agregado:', nuevoMenu);
 
         // Luego puedes reiniciar el formulario si lo deseas

@@ -1,13 +1,11 @@
 export const environment = {
   firebase: {
-    projectId: 'software-9d74c',
-    appId: '1:498575088162:web:a537eb3f7da5254076487b',
-    databaseURL: 'https://software-9d74c-default-rtdb.firebaseio.com',
-    storageBucket: 'software-9d74c.appspot.com',
-    apiKey: 'AIzaSyDKUoK9diRib4Xx7aeK7TAECfTtHj-r2dY',
-    authDomain: 'software-9d74c.firebaseapp.com',
-    messagingSenderId: '498575088162',
-    measurementId: 'G-G1NLYYGVGF',
+    apiKey: "AIzaSyD-l5fXlUvTppchrjHjZ_LkrRqDIXlteWo",
+  authDomain: "valpotours-3e71f.firebaseapp.com",
+  projectId: "valpotours-3e71f",
+  storageBucket: "valpotours-3e71f.appspot.com",
+  messagingSenderId: "143109148475",
+  appId: "1:143109148475:web:b02b91dcea7ce1d237311e"
   },
     production: false,
 

@@ -1,0 +1,6 @@
+<ul class="list-group list-group-item-info">
+  <li class="list-group-item list-group-item-info text-center" *ngFor="let category of categoria; let i = index" [ngClass]="{'active': i === 0}">
+    {{ category.categoria }}
+    <button pButton pRipple type="button" icon="pi pi-trash" (click)="eliminarCategoria(category)" class="p-button-rounded p-button-text p-button-danger"></button>
+  </li>
+</ul>

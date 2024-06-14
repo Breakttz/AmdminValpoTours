@@ -6,11 +6,16 @@ import { SelectItem, TreeNode } from 'primeng/api';
 import { AddmenusComponent } from '../addmenus/addmenus.component';
 
 interface NuevoMenu {
-  id: string;
-  nombre: string;
-  precio: string;
-  descripcion: string;
-  imagen: string; // Change the type from HTMLImageElement to string
+  id: string,
+  nombre: string,
+  categoria: string,
+  direccion: string,
+  urlmaps: string,
+  atitud: string,
+  localidad: string,
+  longitud: string,
+  provincia: string,
+  urlimg: string
 }
 interface Column {
   field: string;
@@ -34,7 +39,7 @@ export class EditmenusComponent {
     this.fetchMenus();
   }
   fetchMenus() {
-    this.firestore.collection<NuevoMenu>('menus').valueChanges().subscribe((menus) => {
+    this.firestore.collection<NuevoMenu>('places').valueChanges().subscribe((menus) => {
       this.cols = [
         { field: 'nombre', header: 'Nombre' },
         { field: 'precio', header: 'Precio' },
@@ -66,7 +71,7 @@ export class EditmenusComponent {
   
     reader.onload = (e) => {
       const base64String = reader.result as string;
-      menu.imagen = base64String; // Actualizamos la propiedad "imagen" del objeto "menu" con la URL de la imagen
+      menu.urlimg = base64String; // Actualizamos la propiedad "imagen" del objeto "menu" con la URL de la imagen
     };
   
     reader.readAsDataURL(file);

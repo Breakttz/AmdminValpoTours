@@ -1,6 +1,6 @@
 <style>
   body {
-      background-image: url('assets/imagenes/walpaper.jpg');
+      background-image: url('assets/imagenes/wallpaper.jpg');
       background-size: cover;
       background-position: center;
       /* Otros estilos opcionales */
@@ -8,39 +8,43 @@
 </style>
 <body>
   <div class="content">
-    <h1>Santa Rosa De Lima</h1>
+    <h1>VALPO TOURS </h1>
 
-      <p-galleria [value]="images" (onValueChange)="handleValueChange($event)" [showIndicators]="true" [showThumbnails]="false"
-        [changeItemOnIndicatorHover]="false" [responsiveOptions]="responsiveOptions"
-        [containerStyle]="{ 'max-width': '740px' }">
-        <ng-template pTemplate="item" let-item>
-          <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
-        </ng-template>
-      </p-galleria>
-    
+
     
 
     <div class="card-container">
       <div class="card">
         <a href="add-component">
           <span class="material-icons"></span>
-          <p>Agregar Menú</p>
+          <p>Agregar Lugar</p>
         </a>
       </div>
       <div class="card">
-        <a href="editmenu-component">
+        <a href="categoria-component">
           <span class="material-icons"></span>
-          <p>Modificar Menú</p>
+          <p>Agregar Categoria</p>
         </a>
       </div>
       <!-- Agregar más tarjetas aquí -->
     </div>
 
-    <div class="card highlight-card">
-      <a href="mostrarmenu-component">
-        <span class="material-icons"></span>
-        <p>Menús</p>
-      </a>
+
+    <div class="card-container">
+      <div class="card">
+        <a href="mostrarmenu-component">
+          <span class="material-icons"></span>
+          <p>Lugares</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="lista-comentario-component">
+          <span class="material-icons"></span>
+          <p>Listar comentarios</p>
+        </a>
+      </div>
+      <!-- Agregar más tarjetas aquí -->
     </div>
+    
   </div>
 </body>

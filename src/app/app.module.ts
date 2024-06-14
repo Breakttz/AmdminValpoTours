@@ -22,6 +22,9 @@ import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { TreeTableModule } from 'primeng/treetable';
 import { EditmenusComponent } from './modules/editmenus/editmenus.component';
 import { FileUploadModule } from 'primeng/fileupload';
+import { CategoriaComponent } from './modules/editcategory/categoria/categoria.component';
+import { ListaCategoriasComponent } from './modules/lista-categorias/lista-categorias.component';
+import { ListaComentariosComponent } from './modules/lista-comentarios/lista-comentarios.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { FileUploadModule } from 'primeng/fileupload';
     MenuPrincipalComponent,
     AddmenusComponent,
     MostrarMenusComponent,
-    EditmenusComponent
+    EditmenusComponent,
+    CategoriaComponent,
+    ListaCategoriasComponent,
+    ListaComentariosComponent
   ],
   imports: [
     FileUploadModule,
