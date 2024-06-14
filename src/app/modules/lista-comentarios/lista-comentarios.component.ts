@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
 
-interface Comentarios {
+interface Comentario {
   id: string;
   idLugar: string;
   comentario: string;
@@ -17,22 +16,20 @@ interface Comentarios {
 })
 export class ListaComentariosComponent implements OnInit {
 
-  comentario: Comentarios[] = [];
-  comentariosCompartir: Comentarios[] = [];
+  comentarios: Comentario[] = [];
+  filteredComentarios: Comentario[] = [];
 
-  constructor(
-    private firestore: AngularFirestore,
-    private storage: AngularFireStorage
-  ) {}
+  constructor(private firestore: AngularFirestore) {}
 
   ngOnInit(): void {
     this.fetchComentarios();
   }
 
-  async eliminarComentario(comentario: Comentarios) {
+  async eliminarComentario(comentario: Comentario) {
     try {
       await this.firestore.collection('comentarios').doc(comentario.id).delete();
-      this.comentario = this.comentario.filter(item => item.id !== comentario.id);  // Actualiza la lista localmente
+      this.comentarios = this.comentarios.filter(item => item.id !== comentario.id);  // Actualiza la lista localmente
+      this.filteredComentarios = this.filteredComentarios.filter(item => item.id !== comentario.id);  // Actualiza la lista filtrada
       console.log(`Comentario con ID ${comentario.id} eliminado`);
     } catch (error) {
       console.error('Error eliminando el comentario: ', error);
@@ -40,11 +37,18 @@ export class ListaComentariosComponent implements OnInit {
   }
 
   fetchComentarios() {
-    this.firestore.collection<Comentarios>('comentarios').valueChanges({ idField: 'id' }).subscribe((comentarios) => {
-      this.comentario = comentarios;
-      this.comentariosCompartir = this.comentario.slice();
-      console.log('Comentarios recuperados:', this.comentario);
+    this.firestore.collection<Comentario>('comentarios').valueChanges({ idField: 'id' }).subscribe((comentarios) => {
+      this.comentarios = comentarios;
+      this.filteredComentarios = [...this.comentarios];  // Copia los comentarios a filteredComentarios
+      console.log('Comentarios recuperados:', this.comentarios);
     });
+  }
+
+  onFilterChange(event: Event) {
+    const searchText = (event.target as HTMLInputElement).value.toLowerCase();
+    this.filteredComentarios = this.comentarios.filter(comentario =>
+      comentario.nombreUsuario.toLowerCase().includes(searchText) || comentario.comentario.toLowerCase().includes(searchText)
+    );
   }
 
 }

@@ -1,6 +1,15 @@
-<ul class="list-group list-group-item-info">
-  <li class="list-group-item list-group-item-info text-center" *ngFor="let category of categoria; let i = index" [ngClass]="{'active': i === 0}">
-    {{ category.categoria }}
-    <button pButton pRipple type="button" icon="pi pi-trash" (click)="eliminarCategoria(category)" class="p-button-rounded p-button-text p-button-danger"></button>
-  </li>
-</ul>
+<div class="container">
+  <div class="p-inputgroup mb-3">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-search"></i>
+    </span>
+    <input type="text" pInputText placeholder="Buscar por Categoría" (input)="onFilterChange($event)">
+  </div>
+
+  <ul class="list-group list-group-item-info">
+    <li class="list-group-item list-group-item-info text-center" *ngFor="let categoria of filteredCategorias; let i = index" [ngClass]="{'active': i === 0}">
+      {{ categoria.categoria }}
+      <button pButton pRipple type="button" icon="pi pi-trash" (click)="eliminarCategoria(categoria)" class="p-button-rounded p-button-text p-button-danger"></button>
+    </li>
+  </ul>
+</div>

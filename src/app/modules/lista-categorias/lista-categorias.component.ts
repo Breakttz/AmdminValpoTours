@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 interface Categorias {
-  id:string
-  categoria: string,
+  id: string;
+  categoria: string;
 }
+
 @Component({
   selector: 'app-lista-categorias',
   templateUrl: './lista-categorias.component.html',
@@ -13,28 +13,39 @@ interface Categorias {
 })
 export class ListaCategoriasComponent implements OnInit {
 
-  categoria: Categorias[] = [];
-  categoriaCompartir: Categorias[] = [];
+  categorias: Categorias[] = [];
+  filteredCategorias: Categorias[] = [];
 
-  constructor(
-    private firestore: AngularFirestore,
-    private storage: AngularFireStorage // Add AngularFireStorage
-  ) {}
+  constructor(private firestore: AngularFirestore) {}
 
   ngOnInit(): void {
-    this.fetchMenus();
+    this.fetchCategorias();
   }
- 
+
   async eliminarCategoria(categoria: Categorias) {
-    await this.firestore.collection('categorias').doc(categoria.id).delete();
-    this.categoria = this.categoria.filter(item => item.id !== categoria.id);  // Actualiza la lista localmente
+    try {
+      await this.firestore.collection('categorias').doc(categoria.id).delete();
+      this.categorias = this.categorias.filter(item => item.id !== categoria.id);  // Actualiza la lista localmente
+      this.filteredCategorias = this.filteredCategorias.filter(item => item.id !== categoria.id);  // Actualiza la lista filtrada
+      console.log('Categoría eliminada:', categoria);
+    } catch (error) {
+      console.error('Error al eliminar categoría:', error);
+    }
   }
-  fetchMenus() {
-    this.firestore.collection<Categorias>('categorias').valueChanges().subscribe((categoria) => {
-      this.categoria = categoria;
-      this.categoriaCompartir = this.categoria.slice();
-      console.log('Menús recuperados:', this.categoria);
+
+  fetchCategorias() {
+    this.firestore.collection<Categorias>('categorias').valueChanges().subscribe((categorias) => {
+      this.categorias = categorias;
+      this.filteredCategorias = [...this.categorias];  // Copia las categorías a filteredCategorias
+      console.log('Categorías recuperadas:', this.categorias);
     });
+  }
+
+  onFilterChange(event: Event) {
+    const searchText = (event.target as HTMLInputElement).value.toLowerCase();
+    this.filteredCategorias = this.categorias.filter(categoria =>
+      categoria.categoria.toLowerCase().includes(searchText)
+    );
   }
 
 }
